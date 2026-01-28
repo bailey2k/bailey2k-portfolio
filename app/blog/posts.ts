@@ -11,7 +11,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Sending love letters",
     date: "2025-11-18",
     excerpt:
-      "Explaining my design philosophy behind the IoT mailbox I made for my girlfriend to send her letters.",
+      "Explaining my design idea behind the IoT mailbox I made for my girlfriend to send her letters.",
   },
 ];
 

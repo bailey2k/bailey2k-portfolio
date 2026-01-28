@@ -91,7 +91,7 @@ export const RESUME_DATA = {
         },
         {
             title: "Ticket Price Scraper",
-            description: "Developed an web scraper that notifies the user via email whenever ticket prices drop below their desired price.",
+            description: "Developed a web scraper that notifies the user via email whenever ticket prices drop below their desired price.",
             start: "March 2025",
             end: "April 2025",
             tags: [

@@ -15,55 +15,100 @@ export default function IoTMailboxPost() {
           <section className="prose prose-invert text-sm text-gray-200">
             <h2>Overview</h2>
             <p>
-              This post documents the IoT mailbox I built to notify me when mail arrives. It covers the hardware
-              selection, wiring, firmware, the backend that aggregates events, and deployment notes.
+              I figured I should document probably the coolest thing I have ever worked on, a Raspberry Pi mailbox to send messages back
+              and forth with my girlfriend. It uses a web portal with Express/Node.js to send messages back and forth between two internet connected thermal printers.
+
+              The idea for this stemmed from her fascination with our mailboxes on one of her visits to the US from Ireland.
+              In Ireland, they don't have two-way mail delivery on your home mailbox, you either drop outgoing mail at a green An Post box, or at the post office.
+              I wanted to find a way to implement that in a gift for her birthday in 2025, and mimic the American mailbox experience.
             </p>
 
-            <h2>What I used</h2>
+            <h2>What I used (per printer)</h2>
             <ul>
-              <li>ESP32 development board (Wi‑Fi)</li>
-              <li>Magnetic reed switch (or a small hall effect sensor)</li>
-              <li>Small enclosure and mounting hardware</li>
-              <li>Lightweight backend (Node.js/Express or serverless function)</li>
+              <li>Raspberry Pi Zero 2W</li>
+              <li>Limit switches</li>
+              <li>58mm thermal printer (with USB interface)</li>
+              <li>3D-printed mailbox housing</li>
+              <li>USB-A to MicroUSB cable</li>
+              <li>5V power supply (for printer)</li>
             </ul>
 
-            <h2>Wiring</h2>
+            <h2>Detailed functionality</h2>
+            My girlfriend's end of the setup is much more interesting than mine. I 3D printed a toy mailbox model from
+            Printables and added a hole to the back for wiring before printing.
+
+            The general idea is that she types a message on my web portal and it's stored in MongoDB to be sent when she
+            flips the flag on the mailbox which triggers a limit switch I've attached inside the mailbox housing.
+
+            My side of the mailbox is just the guts, a printer and RPi with no switch.
             <p>
-              The reed switch sits on the mailbox door and connects to a GPIO on the ESP32 with a pull‑up. When the
-              door opens the circuit changes and the ESP32 detects the transition.
+              
             </p>
 
-            <h2>Firmware</h2>
-            <p>Basic firmware logic:</p>
-            <ol className="mono p-3 bg-card-bg rounded list-decimal list-inside">
-              <li>Initialize Wi‑Fi</li>
-              <li>Connect to backend via HTTPS POST</li>
-              <li>Read sensor state on interrupt</li>
-              <li>Debounce and send a single event per open</li>
-              <li>Optionally include RSSI / battery info</li>
-            </ol>
+            <h2>Setup</h2>
 
-            <h2>Backend</h2>
             <p>
-              The backend accepts events and can either send push notifications (Pushover/Pushbullet) or store a
-              timeline of events. For a simple self-hosted deploy I used a small Express endpoint behind a reverse
-              proxy and stored events in a tiny JSON file or SQLite DB.
+              This section documents how I set up the mailbox end to end.
             </p>
 
-            <h2>Deployment notes</h2>
+            <h3>Mailbox assembly</h3>
             <p>
-              Make sure the ESP32 reconnects gracefully and has an exponential backoff for Wi‑Fi. Secure the
-              endpoint with a simple token or use mutually validated TLS if you expose it publicly.
+              I started by 3D printing a small toy mailbox and modifying the model to allow
+              wiring to pass through the back. Inside, I mounted a limit switch connected to
+              the flag so that flipping it would trigger sending to the opposite printer.
             </p>
 
-            <h2>Lessons & Next Steps</h2>
-            <ul>
-              <li>Add OTA updates for firmware convenience.</li>
-              <li>Include a small battery monitor to detect low power.</li>
-              <li>Log raw events and provide a web UI for the timeline.</li>
-            </ul>
+            <h3>Raspberry Pi setup</h3>
+            <p>
+              Each printer system uses a Raspberry Pi Zero 2W with the full RPi OS. I'm running them headless
+              so I was using VNCViewer on my Mac to access them over local Wi-Fi on setup.
 
-            <p className="mt-6">If you'd like, I can expand this into a full post with circuit diagrams, code snippets, and a deploy guide.</p>
+              I also had to make sure they worked before I left to deliver them in Ireland, so I set up my
+              girlfriend's with her internet to work as soon as I plugged it in.
+
+              There's some basic terminal command I had to run to get the Python script to work on startup,
+              just to minimize setup and in case she ever moves the mailbox, her power goes out, etc.
+            </p>
+
+            <h3>Thermal printer</h3>
+            <p>
+              The printer is a standard 58mm USB thermal printer. I had to mess with text formatting a bit to get it to work
+              the way that I wanted it to (with a little YOU'VE GOT MAIL heading).
+            </p>
+
+            <h3>Flag switch</h3>
+            <p>
+              The flag switch was a little annoying as I ordered the incorrect cables and needed to MacGyver them to work.
+              I ended up just using electrical tape and praying it wouldn't come undone in transit.
+
+              These were connected to GPIO pins 6 and GND, and worked perfectly.
+            </p>
+
+            <img
+              src="/images/switch_wiring.jpeg"
+              alt="flag switch wiring setup"
+              className="rounded my-6"
+            />
+
+            <h3>Backend connection</h3>
+            <p>
+              The Pi periodically checks a small Express backend for new messages. When a message
+              is available on my MongoDB database, it prints and marks it as delivered so it won't be reprinted.
+
+              The web portal I just deployed with Render on top of my portfolio site.
+            </p>
+
+            <h3>Final testing</h3>
+            <p>
+              Since the mailbox would be completely inaccessible to me once I left Ireland, I needed to test this setup fully.
+
+              Once everything was assembled, I tested message delivery in various scenarios. For example,
+              I tested startup functionality by queuing a message on the web portal and then plugging in the Pi.
+
+              I also tested the web portal out by queuing a message via a different internet connection to make sure everything worked
+              and wasn't still running the web server locally like how it was before I figured out the backend.
+            </p>
+
           </section>
         </article>
       </div>
