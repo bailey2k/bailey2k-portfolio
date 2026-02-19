@@ -16,7 +16,18 @@ export default function IoTMailboxPost() {
             <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">
               A way to send printed messages over long distance
             </h1>
-            <div className="text-sm text-gray-500">Published: 2025-11-18</div>
+            <div className="text-sm text-gray-500 flex flex-wrap items-center gap-x-4 gap-y-1">
+              <span>Published: 2025-11-18</span>
+              <span className="text-gray-600">·</span>
+              <a
+                href="https://github.com/bailey2k/iot-printer-mailbox"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white hover:underline"
+              >
+                View on GitHub
+              </a>
+            </div>
           </header>
 
           <section className="prose prose-invert prose-headings:font-semibold prose-headings:text-white max-w-none space-y-8 text-base md:text-lg text-gray-200 leading-relaxed">
