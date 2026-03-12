@@ -29,6 +29,19 @@ export const RESUME_DATA = {
     ],
     projects: [
         {
+            title: "Neural Model of Working Memory in Piloting",
+            description: "Currently building a first-of-its-kind biologically plausible neural network model for the OpenMATB cognitive task, a GPU-accelerated JAX simulation pipeline with real-time visualization, and a cross-platform Qt interface for experiment configuration and analysis.",
+            start: "January 2026",
+            end: null,
+            tags: [
+                "OpenMATB",
+                "JAX",
+                "PyTorch",
+                "Qt",
+                "Neural Modeling"
+            ]
+        },
+        {
             title: "Modified Splay Trees",
             description: "Implemented a modified version of the splay tree data structure for CMSC420.",
             start: "October 2025",

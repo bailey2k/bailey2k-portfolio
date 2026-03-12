@@ -29,7 +29,7 @@ export default function Home() {
             <ExternalLink href="https://www.linkedin.com/in/bailey-j7">
               <Image src="/logos/linkedin.png" alt="LinkedIn" width={36} height={36} draggable={false} />
             </ExternalLink>
-            <ExternalLink href="https://instagram.com/74.bailey">
+            <ExternalLink href="https://instagram.com/lomospark">
               <Image src="/logos/instagram.png" alt="Instagram" width={36} height={36} draggable={false} />
             </ExternalLink>
             <ExternalLink href="https://open.spotify.com/user/31bmdw7ozxofoudlhrnqfsetz2ua?si=070676c0f9df4cfd">
