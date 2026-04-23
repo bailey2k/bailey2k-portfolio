@@ -29,16 +29,16 @@ export const RESUME_DATA = {
     ],
     projects: [
         {
-            title: "Neural Model of Working Memory in Piloting",
-            description: "Currently building a first-of-its-kind biologically plausible neural network model for the OpenMATB cognitive task, a GPU-accelerated JAX simulation pipeline with real-time visualization, and a cross-platform Qt interface for experiment configuration and analysis.",
-            start: "January 2026",
+            title: "Neural Model of Working Memory",
+            link: "/assets/neural-model-poster.pdf",
+            description: "Building a 2D/3D brain visualization tool in Qt for a UMD PhD researcher; compiles architectures into PyTorch models trained on the Multi-Attribute Task Battery with real-time neural activity metrics. Presenting at UMD Capstone Design Expo, May 2026.",
+            start: "February 2026",
             end: null,
             tags: [
-                "OpenMATB",
-                "JAX",
-                "PyTorch",
                 "Qt",
-                "Neural Modeling"
+                "PyTorch",
+                "Neural Modeling",
+                "OpenMATB"
             ]
         },
         {
@@ -56,42 +56,43 @@ export const RESUME_DATA = {
             title: "hangig",
             link: "https://hangig.app",
             lowercase: true,
-            description: "An event planning app for iOS featuring real-time voting and AI based suggestions.",
+            description: "iOS event planning app where hosts invite friends via link and call live votes on activities. Integrated Google Gemini API to generate itineraries with real nearby results — concerts, restaurants, travel times — that friends can vote on. Firebase Auth and Firestore for real-time sync.",
             launched: "April 2026",
             end: null,
             tags: [
                 "Swift",
-                "iOS",
-                "Google Firebase",
                 "SwiftUI",
-                "AI Based Suggestions"
+                "Firebase",
+                "Vercel",
+                "Google Gemini"
             ]
         },
         {
-            title: "IoT Mailbox",
-            description: "Built and designed from scratch a two-way mailbox system utilizing thermal receipt printers and Raspberry Pis to deliver messages over long distance.",
+            title: "IoT \"Love Letter\" Mailbox",
+            link: "https://github.com/bailey2k/iot-printer-mailbox",
+            description: "Two-way IoT messaging system using Raspberry Pi thermal printers in 3D-printed mailboxes; raising the flag triggers a limit switch that delivers a web portal message to the paired printer. Node.js/Express backend with MongoDB — 100+ messages delivered since December 2025 with zero downtime.",
             start: "July 2025",
             end: "August 2025",
             tags: [
                 "Python",
-                "Express.js",
-                "Node.js",
-                "Internet of Things",
+                "JavaScript",
                 "Raspberry Pi",
-                "HTML",
-                "Docker"
+                "Node.js",
+                "MongoDB"
             ]
         },
         {
-            title: "An analysis of CS:GO professional matches",
-            description: "Collaborated on a semester-long data science project for CMSC420 in which data was cleaned, analyzed, and visualized based on >40000 professional matches of Counter-Strike: Global Offensive.",
+            title: "CS:GO Competitive Match Analysis",
+            link: "https://bailey2k.github.io",
+            description: "Analyzed 45,000+ professional CS:GO matches from 2015–2020; found ADR and HLTV Rating correlate at r=0.880 across 300,000+ player records. Built a Random Forest classifier predicting map veto outcomes at 74.3% accuracy.",
             start: "June 2025",
             end: "July 2025",
             tags: [
                 "Python",
-                "Pandas",
+                "pandas",
                 "Matplotlib",
-                "Seaborn"
+                "Seaborn",
+                "scikit-learn"
             ]
         },
         {
@@ -106,13 +107,15 @@ export const RESUME_DATA = {
         },
         {
             title: "Ticket Price Scraper",
-            description: "Developed a web scraper that notifies the user via email whenever ticket prices drop below their desired price.",
+            description: "RESTful API that continuously scrapes and monitors ticket prices across resale platforms, alerting users via Gmail SMTP when prices drop below a user-defined target.",
             start: "March 2025",
             end: "April 2025",
             tags: [
                 "Python",
                 "FastAPI",
-                "Docker"
+                "MongoDB",
+                "Docker",
+                "Camoufox"
             ]
         },
         {
@@ -127,12 +130,5 @@ export const RESUME_DATA = {
             ]
         }
     ],
-    experience: [
-        {
-            title: "Student Paratransit Driver",
-            description: "Delivered students with disabilities across campus in a timely manner with a focus on client discretion.",
-            start: "October 2024",
-            end: "December 2025"
-        }
-    ]
+    experience: []
 }

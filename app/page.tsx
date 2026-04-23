@@ -133,21 +133,6 @@ export default function Home() {
             </div>
           </article>
 
-          <article>
-            <h2 className="text-xl font-semibold mb-3">Experience</h2>
-            <div className="timeline relative">
-              <div className="timeline-divider" />
-              {(RESUME_DATA.experience || []).map((e, i) => (
-                <div key={i} className="timeline-item">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="text-lg font-medium">{e.title}</h3>
-                    <div className="text-sm text-gray-600 whitespace-nowrap">{e.start} — {e.end ?? "Present"}</div>
-                  </div>
-                  <p className="text-sm text-gray-700 mt-1">{e.description}</p>
-                </div>
-              ))}
-            </div>
-          </article>
         </section>
       </div>
     </main>
