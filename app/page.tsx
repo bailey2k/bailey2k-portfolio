@@ -84,28 +84,19 @@ export default function Home() {
         <section className="md:col-span-2 flex flex-col gap-8">
           
           <article>
-            <h2 className="text-xl font-semibold mb-3">Education</h2>
-            {(RESUME_DATA.education || []).map((edu, i) => (
-              <div key={i} className="mb-4">
-                <div className="flex items-baseline justify-between">
-                  <div>
-                    <a href={edu.link} target="_blank" rel="noopener noreferrer" className="text-lg font-bold hover:underline">
-                      {edu.university}
-                    </a>
-                    <div className="text-sm text-gray-700">{edu.major}{edu.minor ? ` • ${edu.minor}` : ""}</div>
-                  </div>
-                  <div className="text-sm text-gray-600">{edu.start} — {edu.end ?? "Present"}</div>
-                </div>
-
-                {edu.coursework && edu.coursework.length > 0 && (
-                  <div className="mt-2 flex flex-wrap gap-2 text-sm">
-                    {(edu.coursework || []).map((c, idx) => (
-                      <span key={idx} className="tag-white">{c}</span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+            <h2 className="text-xl font-semibold mb-3">About Me</h2>
+            <div className="flex flex-col gap-3 text-sm text-gray-700 leading-relaxed">
+              <p>
+                I&apos;m Bailey, a senior Computer Science student at the University of Maryland, College Park.
+                I enjoy taking photos (check out my{" "}
+                <a href="https://www.instagram.com/lomospark" target="_blank" rel="noopener noreferrer" className="hover:underline">photography Instagram</a>
+                !), music, and video games.
+              </p>
+              <p>
+                Currently, I&apos;m spending most of my time finishing up my undergraduate capstone project before presenting it at the UMD Capstone Design Expo in May 2026.{" "}
+                <a href="/assets/neural-model-poster.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">Check it out here!</a>
+              </p>
+            </div>
           </article>
 
           <article>

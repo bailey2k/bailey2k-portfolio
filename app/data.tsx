@@ -1,32 +1,4 @@
 export const RESUME_DATA = {
-    education: [
-        {
-        university: "University of Maryland, College Park",
-        link: "https://umd.edu",
-        major: "Bachelor's Degree in Computer Science",
-        minor: "Minor: Astronomy",
-        start: "2022",
-        end: null,
-        coursework: [
-            "Algorithms",
-            "Advanced Data Structures",
-            "Software Engineering",
-            "Database Design",
-            "Linear Algebra",
-            "Computer and Network Security",
-            "Calculus",
-            "Discrete Mathematics",
-            "Functional Programming",
-            "Compilers",
-            "Web Development",
-            "Data Science",
-            "Computer Systems",
-            "Astrobiology",
-            "Stars and Stellar Systems",
-            "Origins of the Universe",
-        ]
-        }
-    ],
     projects: [
         {
             title: "Neural Model of Working Memory",
