@@ -16,8 +16,12 @@ export default function ProjectsPage() {
           {(RESUME_DATA.projects || []).map((p, i) => (
             <article key={i} className="p-4 border border-gray-200 bg-transparent rounded">
               <div className="flex items-baseline justify-between">
-                <h2 className="text-lg font-semibold">{p.title}</h2>
-                <div className="text-sm text-gray-600 whitespace-nowrap">{p.start} — {p.end ?? "Present"}</div>
+                <h2 className={`text-lg font-semibold${p.lowercase ? " lowercase" : ""}`}>
+                  {p.link ? (
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="hover:underline">{p.title}</a>
+                  ) : p.title}
+                </h2>
+                <div className="text-sm text-gray-600 whitespace-nowrap">{p.launched ? `Launched ${p.launched}` : `${p.start} — ${p.end ?? "Present"}`}</div>
               </div>
               <p className="text-sm text-gray-700 mt-2">{p.description}</p>
               <div className="mt-3 flex flex-wrap gap-2">
