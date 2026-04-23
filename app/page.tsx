@@ -115,8 +115,12 @@ export default function Home() {
               {(RESUME_DATA.projects || []).map((p, i) => (
                 <div key={i} className="timeline-item">
                   <div className="flex items-baseline justify-between">
-                    <h3 className="text-lg font-medium">{p.title}</h3>
-                      <div className="text-sm text-gray-600 whitespace-nowrap">{p.start} — {p.end ?? "Present"}</div>
+                    <h3 className={`text-lg font-medium${p.lowercase ? " lowercase" : ""}`}>
+                      {p.link ? (
+                        <a href={p.link} target="_blank" rel="noopener noreferrer" className="hover:underline">{p.title}</a>
+                      ) : p.title}
+                    </h3>
+                      <div className="text-sm text-gray-600 whitespace-nowrap">{p.launched ? `Launched ${p.launched}` : `${p.start} — ${p.end ?? "Present"}`}</div>
                   </div>
                   <p className="text-sm text-gray-700 mt-1">{p.description}</p>
                   <div className="mt-2 flex flex-wrap gap-2">

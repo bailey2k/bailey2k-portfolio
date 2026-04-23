@@ -54,8 +54,10 @@ export const RESUME_DATA = {
         },
         {
             title: "hangig",
+            link: "https://hangig.app",
+            lowercase: true,
             description: "An event planning app for iOS featuring real-time voting and AI based suggestions.",
-            start: "March 2025",
+            launched: "April 2026",
             end: null,
             tags: [
                 "Swift",
