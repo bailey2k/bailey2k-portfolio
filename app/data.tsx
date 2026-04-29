@@ -2,7 +2,7 @@ export const RESUME_DATA = {
     projects: [
         {
             title: "Neural Model of Working Memory",
-            link: "/assets/neural-model-poster.pdf",
+            link: "https://expo.umd.edu/projects/spring-2026/neural-model-working-memory",
             description: "Building a 2D/3D brain visualization tool in Qt for a UMD PhD researcher; compiles architectures into PyTorch models trained on the Multi-Attribute Task Battery with real-time neural activity metrics. Presenting at UMD Capstone Design Expo, May 2026.",
             start: "February 2026",
             end: null,

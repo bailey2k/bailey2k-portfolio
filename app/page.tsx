@@ -94,7 +94,7 @@ export default function Home() {
               </p>
               <p>
                 Currently, I&apos;m spending most of my time finishing up my undergraduate capstone project before presenting it at the UMD Capstone Design Expo in May 2026.{" "}
-                <a href="/assets/neural-model-poster.pdf" target="_blank" rel="noopener noreferrer" className="hover:underline">Check it out here!</a>
+                <a href="https://expo.umd.edu/projects/spring-2026/neural-model-working-memory" target="_blank" rel="noopener noreferrer" className="hover:underline">Check it out here!</a>
               </p>
             </div>
           </article>
